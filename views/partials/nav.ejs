@@ -8,7 +8,9 @@
   <div class="nav-links">
     <!-- Change these based on status -->
     <% if (locals.user) {%>
-        <a href="/join">Join</a>
+        <% if (!locals.user.membership_status) {%>
+            <a href="/join">Join</a>
+        <% } %>
         <a href="/log-out">Log out</a>
     <% } else { %>
         <a href="/sign-in">Sign in</a>
