@@ -46,12 +46,22 @@ async function updateMembershipStatus(userId, status) {
     return result.rows[0];
 };
 
+async function isAdmin(userId) {
+    const query = `
+        SELECT admin FROM users
+        WHERE id = $1;
+    `;
+    const result = await pool.query(query, [userId]);
+    return result.rows[0]?.admin;
+};
+
 
 module.exports = {
     insertNewUser,
     findUserByUsername,
     findUserById,
     updateMembershipStatus,
+    isAdmin,
 
 
 };
