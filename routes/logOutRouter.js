@@ -1,5 +1,4 @@
 const { Router } = require("express");
-const passport = require("passport");
 
 const logOutController = require("../controllers/logOutControllers");
 
