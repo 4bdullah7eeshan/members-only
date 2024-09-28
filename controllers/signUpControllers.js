@@ -28,6 +28,19 @@ const validateSignUp = [
     })
 ];
 
+const handleValidationErrors = (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        
+        return res.render("pages/signUp", {
+            title: "Sign up",
+            errors: errors.array(),
+            userData: req.body,
+        });
+    }
+    next();
+};
+
 const createNewUser = asyncHandler(async (req, res, next) => {
     const { firstName, lastName, username, password } = req.body;
     try {
