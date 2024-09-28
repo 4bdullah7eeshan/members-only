@@ -17,8 +17,18 @@ async function insertNewUser({ firstName,
     return result.rows[0];
 };
 
+async function findUserByUsername(username) {
+    const query = `
+        SELECT * FROM users
+        WHERE username = $1;
+    `;
+    const result = await pool.query(query, [username]);
+    return result.rows[0];
+}
+
 
 module.exports = {
     insertNewUser,
+    findUserByUsername,
 
 };
