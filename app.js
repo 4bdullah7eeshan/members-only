@@ -6,6 +6,9 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 
+const pool = require("./db/pool");
+
+
 
 // Import routers here
 const signUpRouter = require("./routes/signUpRouter");
