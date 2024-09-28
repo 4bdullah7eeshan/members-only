@@ -5,6 +5,10 @@
         <small id="passcodeHint"><u>Hint:</u> <em>That</em> figure from <strong>Norse Mythology</strong>!</small>
     </div>
 
+    <% if (error) { %>
+        <p><%= error %></p>
+    <% } %>
+
     <div>
         <button type="submit">Join</button>
     </div>
