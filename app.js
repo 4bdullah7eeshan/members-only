@@ -11,6 +11,7 @@ const signUpRouter = require("./routes/signUpRouter");
 
 // Import routers here
 const signUpRouter = require("./routes/signUpRouter");
+const signInRouter = require("./routes/signInRouter");
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Use routers here
 app.use("/sign-up", signUpRouter);
+app.use("/sign-in", signInRouter);
 
 passport.use(
     new LocalStrategy(async (username, password, done) => {
