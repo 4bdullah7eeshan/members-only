@@ -12,6 +12,7 @@ const signUpRouter = require("./routes/signUpRouter");
 // Import routers here
 const signUpRouter = require("./routes/signUpRouter");
 const signInRouter = require("./routes/signInRouter");
+const indexRouter = require("./routes/indexRouter");
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
 
 // Use routers here
+app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/sign-in", signInRouter);
 
