@@ -13,6 +13,7 @@ const signUpRouter = require("./routes/signUpRouter");
 const signUpRouter = require("./routes/signUpRouter");
 const signInRouter = require("./routes/signInRouter");
 const indexRouter = require("./routes/indexRouter");
+const logOutRouter = require("./routes/logOutRouter");
 
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/sign-in", signInRouter);
+app.use("/log-out", logOutRouter);
 
 passport.use(
     new LocalStrategy(async (username, password, done) => {
@@ -75,14 +77,6 @@ passport.deserializeUser(async (id, done) => {
     }
 });
 
-app.get("/log-out", (req, res, next) => {
-    req.logout((err) => {
-      if (err) {
-        return next(err);
-      }
-      res.redirect("/");
-    });
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
