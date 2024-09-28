@@ -26,6 +26,15 @@ async function findUserByUsername(username) {
     return result.rows[0];
 };
 
+async function findUserById(id) {
+    const query = `
+        SELECT * FROM users
+        WHERE id = $1;
+    `;
+    const result = await pool.query(query, [id]);
+    return result.rows[0];
+};
+
 async function updateMembershipStatus(userId, status) {
     const query = `
         UPDATE users
@@ -41,6 +50,7 @@ async function updateMembershipStatus(userId, status) {
 module.exports = {
     insertNewUser,
     findUserByUsername,
+    findUserById,
     updateMembershipStatus,
 
 
