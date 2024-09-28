@@ -5,7 +5,7 @@ const { body, validationResult } = require("express-validator");
 const db = require("../db/queries");
 
 const getSignUpPage = asyncHandler(async (req, res) => {
-    res.render("pages/signUp", { title: "Sign up" });
+    res.render("pages/signUp", { title: "Sign up", user: req.user });
 });
 
 const validateSignUp = [
