@@ -3,6 +3,6 @@ const joinController = require("../controllers/joinControllers");
 
 const joinRouter = Router();
 
-joinRouter.get("/", joinRouter.getJoinForm);
+joinRouter.get("/", joinController.getJoinForm);
 
 module.exports = joinRouter;
