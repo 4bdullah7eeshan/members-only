@@ -7,7 +7,7 @@ module.exports = new Pool({
   database: process.env.PGDATABASE,
   password: process.env.PGPASSWORD,
   port: process.env.PGPORT || 5432,
-  ssl: {
-    require: true,
-  }
+  //ssl: {
+  //  require: true,
+//  }
 });

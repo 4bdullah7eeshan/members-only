@@ -9,9 +9,9 @@ const getSignUpPage = asyncHandler(async (req, res) => {
 });
 
 const validateSignUp = [
-    body('first-name').trim().isLength({ min: 1 }).withMessage('First name is required'),
-    body('last-name').trim().isLength({ min: 1 }).withMessage('Last name is required'),
-    body('username').trim().isEmail().withMessage('Username must be a valid email')
+    body('firstName').trim().isLength({ min: 1 }).withMessage('First name is required'),
+    body('lastName').trim().isLength({ min: 1 }).withMessage('Last name is required'),
+    body('username').trim().isLength({ min: 1 }).withMessage('Username is required')
         .custom(async (value) => {
             const user = await db.findUserByUsername(value);
             if (user) {
@@ -20,7 +20,7 @@ const validateSignUp = [
             return true;
         }),
     body('password').isLength({ min: 5 }).withMessage('Password must be at least 5 characters long'),
-    body('confirm-password').custom((value, { req }) => {
+    body('confirmPassword').custom((value, { req }) => {
         if (value !== req.body.password) {
             throw new Error('Password confirmation does not match password');
         }
