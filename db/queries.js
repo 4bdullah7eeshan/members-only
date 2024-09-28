@@ -24,11 +24,24 @@ async function findUserByUsername(username) {
     `;
     const result = await pool.query(query, [username]);
     return result.rows[0];
-}
+};
+
+async function updateMembershipStatus(userId, status) {
+    const query = `
+        UPDATE users
+        SET membership_status = $1
+        WHERE id = $2
+        RETURNING *;
+    `;
+    const result = await pool.query(query, [status, userId]);
+    return result.rows[0];
+};
 
 
 module.exports = {
     insertNewUser,
     findUserByUsername,
+    updateMembershipStatus,
+
 
 };
