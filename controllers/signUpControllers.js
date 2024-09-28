@@ -58,6 +58,8 @@ const createNewUser = asyncHandler(async (req, res, next) => {
 
 module.exports = {
     getSignUpPage,
+    validateSignUp,
+    handleValidationErrors,
     createNewUser,
 
 };
