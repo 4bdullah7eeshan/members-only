@@ -52,7 +52,7 @@ passport.use(
         if (!match) {
             return done(null, false, { message: "Incorrect password" })
         }
-        
+
         return done(null, user);
       } catch(err) {
         return done(err);
@@ -74,8 +74,15 @@ passport.deserializeUser(async (id, done) => {
       done(err);
     }
 });
-  
-  
+
+app.get("/log-out", (req, res, next) => {
+    req.logout((err) => {
+      if (err) {
+        return next(err);
+      }
+      res.redirect("/");
+    });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
