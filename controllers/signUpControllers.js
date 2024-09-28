@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const bcrypt = require('bcryptjs');
 const db = require("../db/queries");
 
 const getSignUpPage = asyncHandler(async (req, res) => {
