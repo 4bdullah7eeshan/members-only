@@ -48,7 +48,7 @@ const createNewUser = asyncHandler(async (req, res, next) => {
             if (err) {
                 return next(err); 
             }
-            await db.insertNewUser({ firstName, lastName, username, hashedPassword });
+            await db.insertNewUser({ firstName, lastName, username, password: hashedPassword });
             res.redirect("/");
         });
     } catch (err) {
