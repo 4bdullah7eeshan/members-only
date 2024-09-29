@@ -8,9 +8,9 @@ const signInRouter = Router();
 signInRouter.get("/", signInController.getSignInPage);
 signInRouter.post("/", passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/sign-in"
+    failureRedirect: "/sign-in",
+    failureFlash: true,
 }));
-
 
 
 module.exports = signInRouter;
