@@ -18,6 +18,7 @@ const signInRouter = require("./routes/signInRouter");
 const indexRouter = require("./routes/indexRouter");
 const logOutRouter = require("./routes/logOutRouter");
 const joinRouter = require("./routes/joinRouter");
+const newMessageRouter = require("./routes/newMessageRouter");
 
 
 const app = express();
@@ -43,6 +44,7 @@ app.use("/sign-up", signUpRouter);
 app.use("/sign-in", signInRouter);
 app.use("/log-out", logOutRouter);
 app.use("/join", joinRouter);
+app.use("/new-message", newMessageRouter);
 
 passport.use(
     new LocalStrategy(async (username, password, done) => {
