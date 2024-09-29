@@ -2,11 +2,16 @@
     <div>
         <label for="passcode">Enter Secret Passcode</label>
         <input type="passcode" id="passcode" name="passcode" required>
-        <small id="passcodeHint"><u>Hint:</u> <em>That</em> figure from <strong>Norse Mythology</strong>!</small>
+    </div>
+
+    <div>
+        <small id="passcodeHint"><u>Hint</u>: <em>That</em> figure from <strong>Norse Mythology</strong>!</small>
     </div>
 
     <% if (typeof error !== 'undefined' && error) { %>
-        <p><%= error %></p>
+        <div>
+            <p><%= error %></p>
+        </div>
     <% } %>
 
     <div>

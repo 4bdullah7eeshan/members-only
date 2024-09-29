@@ -107,7 +107,9 @@ section ul {
 .sign-in form,
 .sign-up,
 .sign-up form,
-.new-message {
+.new-message,
+.join,
+.join form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,21 +127,24 @@ section ul {
 
 .sign-in form,
 .sign-up form,
-.new-message form {
+.new-message form,
+.join form {
     outline: 1px solid black;
     padding: 1rem;
     border-radius: 0.75rem;
 }
 
 .sign-in form,
-.sign-up form {
+.sign-up form,
+.join form {
     width: 25vw;
     max-width: 100%;
 }
 
 .sign-in form div,
 .sign-up form div,
-.new-message form div {
+.new-message form div,
+.join form div {
     display: flex;
     flex-direction: column;
 }
