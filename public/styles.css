@@ -21,8 +21,36 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
+    padding: 1rem;
     outline: 1px solid black; /* Change it as needed */
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.75rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    outline: 1px solid black;
+    padding: 0.3rem;
+    border-radius: 0.75rem;
 }
 
 main {
