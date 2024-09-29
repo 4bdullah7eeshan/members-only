@@ -89,13 +89,18 @@ section ul {
     outline: 1px solid black;
     padding: 1rem;
     border-radius: 0.75rem;
+    width: 50vw;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .message {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
 }
 
 .sign-in,
