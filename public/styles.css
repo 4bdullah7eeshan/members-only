@@ -1,18 +1,19 @@
-/* reset.css
-   Generic reset and a template
-*/
+/* styles.css */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial;
 }
 
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    line-height: 1.5;    
+    line-height: 1.5;   
+    background-color: #25503c;
+    color: #fcf9e2; 
 }
 
 nav {
@@ -21,7 +22,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    outline: 1px solid black; /* Change it as needed */
+    outline: 1px solid #fcf9e2; /* Change it as needed */
 }
 
 .logo {
@@ -33,7 +34,8 @@ nav {
 
 .logo a {
     text-decoration: none;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    color: #c6d1f8;
 }
 
 .nav-links,
@@ -46,20 +48,6 @@ nav {
 
 }
 
-.nav-links a,
-.home-links a {
-    text-decoration: none;
-    outline: 1px solid black;
-    padding: 0.3rem;
-    border-radius: 0.75rem;
-}
-
-button {
-    padding: 0.3rem;
-    border-radius: 0.75rem;
-
-}
-
 main {
     flex-grow: 1;
     padding: 0.5rem;
@@ -67,7 +55,6 @@ main {
     flex-direction: column;
     align-items: center;
 }
-
 
 section {
     display: flex;
@@ -86,12 +73,13 @@ section ul {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    outline: 1px solid black;
+    outline: 1px solid #fcf9e2;
     padding: 1rem;
     border-radius: 0.75rem;
     width: 50vw;
     max-width: 100%;
     word-wrap: break-word;
+
 }
 
 .message {
@@ -122,14 +110,13 @@ section ul {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-
 }
 
 .sign-in form,
 .sign-up form,
 .new-message form,
 .join form {
-    outline: 1px solid black;
+    outline: 1px solid #fcf9e2;
     padding: 1rem;
     border-radius: 0.75rem;
 }
@@ -149,7 +136,18 @@ section ul {
     flex-direction: column;
 }
 
+a {
+    color: #c6d1f8;
+    text-decoration: none;
+}
 
+button {
+    padding: 0.3rem;
+    border-radius: 0.75rem;
+    background-color: #4ca78b;
+    color: #e3f1ec;
+    outline: 1px solid #fcf9e2;
+}
 
 footer {
     display: flex;
@@ -157,5 +155,26 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    outline: 1px solid black; /* Change it as needed */
+    outline: 1px solid #fcf9e2; /* Change it as needed */
+
 }
+
+
+hr {
+    color: #fcf9e2;
+}
+
+
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+    color: #fb8bbb;
+}
+
+input {
+    padding: 0.25rem;
+}
+

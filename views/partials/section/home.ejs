@@ -1,10 +1,11 @@
 <section>
+    <p>An exclusive clubhouse where members share ideas and insights, while visitors get a glimpse into the community's conversations.</p>
         <% if (locals.user) { %> 
             <% if (user.membership_status) { %>
                 <h2>Welcome, to the Inner Circle <%= user.username %>!</h2>
                 <p>You are part of the clubhouse and have full access.</p>
                 <h2>Enjoy!</h2>
-                <a href="/new-message">Create New Message</a>
+                <a href="/new-message" class="new-message-link">Create New Message</a>
                 <p>This is what's happening!</p>
                 <div class="messages">
                     <% messages.forEach(message => { %>
@@ -21,11 +22,11 @@
                 <p>Explore thoughts shared by exclusive members and feel free to add your own!</p>
                 <p> Remember, membership unlocks more!</p>
                 <div class="home-links">
-                    <a href="/join">Join</a>
+                    <a href="/join" class="join-link">Get Membership</a>
                 </div>
                 <h2>Join the Conversation—Membership Awaits!</h2>
                 <div class="home-links">
-                    <a href="/new-message">Create New Message</a>
+                    <a href="/new-message" class="new-message-link">Say Something</a>
                 </div>
                 <p>Here's what the members are buzzing about!</p>
                 <div class="messages">
@@ -42,8 +43,8 @@
             <h2>Welcome!</h2>
             <p>Dive into a world of shared thoughts and experiences.</p>
             <div class="home-links">
-                <a href="/sign-in">Sign in</a>
-                <a href="/sign-up">Sign up</a>
+                <a href="/sign-in" class="sign-in-link">Sign in</a>
+                <a href="/sign-up" class="sign-up-link">Sign up</a>
             </div>
             <h2>A Sneak Peek at Our Conversations!</h2>
             <p>Here’s what's happening inside:</p>
