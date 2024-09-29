@@ -5,4 +5,7 @@ const newMessageRouter = Router();
 
 newMessageRouter.get("/", newMessageController.getNewMessageForm);
 
+newMessageRouter.post("/", newMessageController.createNewMessage);
+
+
 module.exports = newMessageRouter;

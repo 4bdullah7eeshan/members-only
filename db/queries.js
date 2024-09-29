@@ -55,6 +55,16 @@ async function isAdmin(userId) {
     return result.rows[0]?.admin;
 };
 
+async function insertNewMessage(title, text, userId) {
+    const query = `
+        INSERT INTO messages (title, text, user_id)
+        VALUES ($1, $2, $3)
+        RETURNING *;
+    `;
+    const result = await pool.query(query, [title, text, userId]);
+    return result.rows[0];
+};
+
 
 module.exports = {
     insertNewUser,
@@ -62,6 +72,7 @@ module.exports = {
     findUserById,
     updateMembershipStatus,
     isAdmin,
+    insertNewMessage,
 
 
 };
