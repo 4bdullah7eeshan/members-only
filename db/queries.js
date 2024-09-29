@@ -65,6 +65,16 @@ async function insertNewMessage(title, text, userId) {
     return result.rows[0];
 };
 
+async function getAllMessagesWithoutUserDetails() {
+    const query = `
+        SELECT title, text
+        FROM messages
+        ORDER BY timestamp DESC;
+    `;
+    const result = await pool.query(query);
+    return result.rows;
+}
+
 
 module.exports = {
     insertNewUser,
@@ -73,6 +83,7 @@ module.exports = {
     updateMembershipStatus,
     isAdmin,
     insertNewMessage,
+    getAllMessagesWithoutUserDetails,
 
 
 };
