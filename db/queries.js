@@ -73,7 +73,19 @@ async function getAllMessagesWithoutUserDetails() {
     `;
     const result = await pool.query(query);
     return result.rows;
-}
+};
+
+async function getAllMessagesWithUserDetails() {
+    const query = `
+        SELECT m.title, m.text, m.timestamp, u.username, u.admin
+        FROM messages m
+        JOIN users u ON m.user_id = u.id
+        ORDER BY m.timestamp DESC;
+    `;
+    const result = await pool.query(query);
+    return result.rows;
+};
+
 
 
 module.exports = {
@@ -84,6 +96,7 @@ module.exports = {
     isAdmin,
     insertNewMessage,
     getAllMessagesWithoutUserDetails,
+    getAllMessagesWithUserDetails,
 
 
 };
