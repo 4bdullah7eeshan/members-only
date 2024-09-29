@@ -131,6 +131,12 @@ section ul {
     border-radius: 0.75rem;
 }
 
+.sign-in form,
+.sign-up form {
+    width: 25vw;
+    max-width: 100%;
+}
+
 .sign-in form div,
 .sign-up form div,
 .new-message form div {
