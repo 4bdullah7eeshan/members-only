@@ -54,6 +54,12 @@ nav {
     border-radius: 0.75rem;
 }
 
+button {
+    padding: 0.3rem;
+    border-radius: 0.75rem;
+
+}
+
 main {
     flex-grow: 1;
     padding: 0.5rem;
@@ -92,6 +98,28 @@ section ul {
     flex-direction: column;
     justify-content: center;
 }
+
+.sign-in,
+.sign-in form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-in form {
+    outline: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+.sign-in form div {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 footer {
     display: flex;
