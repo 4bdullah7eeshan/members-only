@@ -6,7 +6,7 @@ require("dotenv").config();
 const SQL = `
 -- Users
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     username VARCHAR(255) UNIQUE NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE users (
 
 -- Messages
 CREATE TABLE messages (
-    id SERIAL PRIMARY KEY,               
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     title VARCHAR(255) NOT NULL,
     text TEXT NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
