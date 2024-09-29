@@ -9,6 +9,13 @@
         <input type="password" id="password" name="password" required>
     </div>
 
+
+    <% if (error) { %>
+        <div>
+            <p><%= error %></p>
+        </div>
+    <% } %>
+
     <div>
         <button type="submit">Sign in</button>
     </div>
