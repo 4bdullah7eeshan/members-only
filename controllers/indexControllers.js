@@ -11,7 +11,7 @@ const getHomePage = asyncHandler(async (req, res) => {
         messages = await db.getAllMessagesWithoutUserDetails();
     }
 
-    res.render("pages/index", { title: "Home", user: req.user, messages });
+    res.render("pages/index", { title: "Members Only", user: req.user, messages });
 });
 
 

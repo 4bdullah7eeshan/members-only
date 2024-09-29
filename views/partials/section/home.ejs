@@ -18,7 +18,7 @@
             <% } else { %>
                 <h2>Welcome, <%= user.username %>!</h2>
                 <p>Explore thoughts shared by exclusive members and feel free to add your own! Remember, membership unlocks more!</p>
-                <div>
+                <div class="home-links">
                     <a href="/new-message">Create New Message</a>
                     <a href="/join">Join</a>
                 </div>
@@ -33,13 +33,14 @@
                 </ul>
             <% } %>
         <% } else { %>
-            <h2>Welcome to <em>Members Only</em>!</h2>
+            <h2>Welcome!</h2>
             <p>Dive into a world of shared thoughts and experiences.</p>
-            <div>
+            <div class="home-links">
                 <a href="/sign-in">Sign in</a>
                 <a href="/sign-up">Sign up</a>
             </div>
-            <p>Here’s what others are saying!</p>
+            <h2>Sneak Peek!</h2>
+            <p>Here’s what's happening inside:</p>
             <ul>
                 <% messages.forEach(message => { %>
                     <li>
