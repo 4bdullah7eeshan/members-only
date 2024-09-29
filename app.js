@@ -6,6 +6,8 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
+const flash = require('connect-flash');
+
 
 
 const pool = require("./db/pool");
@@ -37,6 +39,14 @@ app.use(bodyParser.json());
 app.use(express.static(assetsPath));
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(flash());
+
+app.use((req, res, next) => {
+    res.locals.error = req.flash('error');
+    res.locals.success = req.flash('success');
+    next();
+});
 
 // Use routers here
 app.use("/", indexRouter);
