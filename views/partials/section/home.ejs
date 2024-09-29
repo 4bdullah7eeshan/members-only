@@ -6,15 +6,15 @@
                 <p>You are part of the clubhouse and have full access.</p>
                 <a href="/new-message">Create New Message</a>
                 <p>This is what's happening!</p>
-                <ul>
+                <div class="messages">
                     <% messages.forEach(message => { %>
-                        <li>
+                        <div class="message">
                             <h3><%= message.title %></h3>
                             <p><%= message.text %></p>
                             <small>Posted by <%= message.username %> on <%= new Date(message.timestamp).toLocaleString() %></small>
-                        </li>
+                        </div>
                     <% }) %>
-                </ul>
+                </div>
             <% } else { %>
                 <h2>Welcome, <%= user.username %>!</h2>
                 <p>Explore thoughts shared by exclusive members and feel free to add your own! Remember, membership unlocks more!</p>
@@ -23,14 +23,14 @@
                     <a href="/join">Join</a>
                 </div>
                 <p>Here's what the members are buzzing about!</p>
-                <ul>
+                <div class="messages">
                     <% messages.forEach(message => { %>
-                        <li>
+                        <div class="message">
                             <h3><%= message.title %></h3>
                             <p><%= message.text %></p>
-                        </li>
+                        </div>
                     <% }) %>
-                </ul>
+                </div>
             <% } %>
         <% } else { %>
             <h2>Welcome!</h2>
@@ -41,14 +41,14 @@
             </div>
             <h2>Sneak Peek!</h2>
             <p>Here’s what's happening inside:</p>
-            <ul>
+            <div class="messages">
                 <% messages.forEach(message => { %>
-                    <li>
+                    <div class="message">
                         <h3><%= message.title %></h3>
                         <p><%= message.text %></p>
-                    </li>
+                    </div>
                 <% }) %>
-            </ul>
+            </div>
         <% } %>
     </section>
 </section>
