@@ -102,7 +102,8 @@ section ul {
 .sign-in,
 .sign-in form,
 .sign-up,
-.sign-up form {
+.sign-up form,
+.new-message {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,15 +111,25 @@ section ul {
     gap: 1rem;
 }
 
+.new-message form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
 .sign-in form,
-.sign-up form {
+.sign-up form,
+.new-message form {
     outline: 1px solid black;
     padding: 1rem;
     border-radius: 0.75rem;
 }
 
 .sign-in form div,
-.sign-up form div {
+.sign-up form div,
+.new-message form div {
     display: flex;
     flex-direction: column;
 }
