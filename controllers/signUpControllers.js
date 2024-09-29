@@ -22,7 +22,7 @@ const validateSignUp = [
     body('password').isLength({ min: 5 }).withMessage('Password must be at least 5 characters long'),
     body('confirmPassword').custom((value, { req }) => {
         if (value !== req.body.password) {
-            throw new Error('Password confirmation does not match password');
+            throw new Error('Passwords do not match');
         }
         return true;
     })
